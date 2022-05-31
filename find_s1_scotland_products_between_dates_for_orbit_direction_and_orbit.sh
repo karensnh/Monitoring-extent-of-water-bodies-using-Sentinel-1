@@ -1,0 +1,13 @@
+#!/bin/bash
+# Example params: ./find_s1_scotland_products_between_dates_for_orbit_direction_and_orbit.sh 2021-01-01 2021-01-31 asc 1
+
+SATELLITES="Sentinel-1A ARD, Sentinel-1B ARD"
+WKT="POLYGON((-4.72395922555999093 57.3837343208153996, -3.63983803317280596 57.38047870161904029, -3.65611612915459583 57.15584097707034061, -4.72721484475634934 57.20793088421206818, -4.72395922555999093 57.3837343208153996))"
+
+START_DATE=$1
+END_DATE=$2
+ORBIT_DIRECTION=$3
+ORBIT=$4
+OUTPUT_LOCATION=/gws/nopw/j04/jncc_muirburn/users/kf_waterbodies/download
+
+/gws/nopw/j04/jncc_muirburn/scripts/find_ard_between_dates.sh "$SATELLITES" "$START_DATE" "$END_DATE" "$WKT" "$OUTPUT_LOCATION" "$ORBIT_DIRECTION" "$ORBIT"
